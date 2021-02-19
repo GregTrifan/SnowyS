@@ -4,8 +4,12 @@
   "description": "",
   "dependencies": {
     "@snowpack/plugin-svelte": "^3.5.2",
+    "carbon-icons-svelte": "^10.23.0",
+    "rollup": "^2.39.0",
     "snowpack": "^3.0.11",
-    "svelte": "^3.32.3"
+    "snowpack-plugin-rollup-bundle": "^0.4.4",
+    "svelte": "^3.32.3",
+    "svelte-materialify": "^0.3.5"
   },
   "devDependencies": {},
   "scripts": {
