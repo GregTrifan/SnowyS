@@ -1,0 +1,18 @@
+{
+  "name": "snowy-svelte",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@snowpack/plugin-svelte": "^3.5.2",
+    "snowpack": "^3.0.11",
+    "svelte": "^3.32.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
