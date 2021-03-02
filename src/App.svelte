@@ -1,8 +1,9 @@
 <script>
-	import {MaterialApp,Button} from 'svelte-materialify';
-	import Sun32 from "carbon-icons-svelte/lib/Sun32";
-	import Moon32 from "carbon-icons-svelte/lib/Moon32";
 	import Navbar from "./components/Navbar.svelte";
+	import Chart from "./components/Chart.svelte";
+	import "@carbon/charts/styles-g100.css";
+	import "carbon-components-svelte/css/g100.css";
+	import {Content} from "carbon-components-svelte";
 	let theme="light"
 	
 	function toggleTheme() {
@@ -14,7 +15,7 @@
 		}
 	}
 </script>
-<MaterialApp {theme}>
+<div>
 	<Navbar toggleTheme={toggleTheme} theme={theme}/>
-	<div>Text</div>
-  </MaterialApp>
+		<Chart/>
+</div>

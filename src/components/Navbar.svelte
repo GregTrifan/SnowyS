@@ -1,46 +1,55 @@
 <script>
-    import {
-      AppBar,
-      Button,
-      Icon,
-      NavigationDrawer,
-      Overlay,
-      List,
-      ListItem,
-      Menu
-    } from 'svelte-materialify';
+     import {
+    Header,
+    HeaderNav,
+    HeaderNavItem,
+    HeaderNavMenu,
+    SideNav,
+    SideNavItems,
+    SideNavMenu,
+    SideNavMenuItem,
+    SideNavLink,
+    SideNavDivider,
+    SkipToContent,
+    Content,
+    Grid,
+    Row,
+    Column,
+  } from "carbon-components-svelte";
     import Menu24 from "carbon-icons-svelte/lib/Menu24";
     import Sun16 from "carbon-icons-svelte/lib/Sun16";
     import Moon16 from "carbon-icons-svelte/lib/Moon16";
-    import Close24 from "carbon-icons-svelte/lib/Close24";
-    import { elasticOut } from 'svelte/easing';
     export let toggleTheme;
     export let theme;
-    let active = false;
-  function toggleNavigation() {
-    active = !active;
-  }
+    let isSideNavOpen=false;
   </script>
-    <AppBar>
-      <div slot="icon">
-        <Button on:click={toggleNavigation} fab depressed>
-          {#if active}
-          <Close24/>
-          {:else}
-          <Menu24/>
-          {/if}
-        </Button>
+    <Header company="Lorem" platformName="Ipsum" bind:isSideNavOpen>
+      <div slot="skip-to-content">
+        <SkipToContent/>
       </div>
-      <span slot="title"> Lorem Ipsum </span>
-    </AppBar>
-    <NavigationDrawer inOpts={{ easing: elasticOut, duration: 500 }} style="position: relative; height:100vh" {active}>
-      <Button on:click="{toggleTheme}" depressed block style="text-align:right;">
-        {#if theme==="light"}
-        <Moon16/> Go Dark
-        {:else}
-        <Sun16/> Go Light
-        {/if}
-      </Button>
-    </NavigationDrawer>
-    <Overlay {active} absolute on:click={toggleNavigation} index={1} />
-    <div>TEXT</div>
+      <HeaderNav>
+        <HeaderNavItem href="/" text="Link 1" />
+        <HeaderNavItem href="/" text="Link 2" />
+        <HeaderNavItem href="/" text="Link 3" />
+        <HeaderNavMenu text="Menu">
+          <HeaderNavItem href="/" text="Link 1" />
+          <HeaderNavItem href="/" text="Link 2" />
+          <HeaderNavItem href="/" text="Link 3" />
+        </HeaderNavMenu>
+        <HeaderNavItem href="/" text="Link 4" />
+      </HeaderNav>
+    </Header>
+    <SideNav bind:isOpen={isSideNavOpen}>
+      <SideNavItems>
+        <SideNavLink text="Link 1" />
+        <SideNavLink text="Link 2" />
+        <SideNavLink text="Link 3" />
+        <SideNavMenu text="Menu">
+          <SideNavMenuItem href="/" text="Link 1" />
+          <SideNavMenuItem href="/" text="Link 2" />
+          <SideNavMenuItem href="/" text="Link 3" />
+        </SideNavMenu>
+        <SideNavDivider />
+        <SideNavLink text="Link 4" />
+      </SideNavItems>
+    </SideNav>

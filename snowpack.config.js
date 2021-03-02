@@ -1,5 +1,5 @@
 const plugins = [
-    '@snowpack/plugin-svelte',
+    '@snowpack/plugin-svelte'
   ]
 
 
